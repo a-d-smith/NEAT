@@ -1,0 +1,14 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../inc/Node.h
+
+/home/andrew/Documents/dev/PandoraNEAT/NEAT/src/Node.cxx
+Node.h
+/home/andrew/Documents/dev/PandoraNEAT/NEAT/src/Node.h
+

@@ -1,0 +1,1 @@
+/usr/bin/c++  -fPIC -Wall -Wextra -Werror -ansi -pedantic -Wno-long-long -Wno-sign-compare -Wshadow -fno-strict-aliasing -std=c++11  -shared -Wl,-soname,libNEAT.so -o libNEAT.so CMakeFiles/NEAT.dir/src/Node.cxx.o 

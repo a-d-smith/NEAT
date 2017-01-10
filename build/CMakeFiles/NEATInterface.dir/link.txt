@@ -1,0 +1,1 @@
+/usr/bin/c++   -Wall -Wextra -Werror -ansi -pedantic -Wno-long-long -Wno-sign-compare -Wshadow -fno-strict-aliasing -std=c++11   CMakeFiles/NEATInterface.dir/test/NEATInterface.cxx.o  -o NEATInterface -rdynamic libNEAT.so -Wl,-rpath,/home/andrew/Documents/dev/PandoraNEAT/NEAT/build: 
