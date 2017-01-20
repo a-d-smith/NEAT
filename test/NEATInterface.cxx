@@ -1,7 +1,12 @@
 #include <iostream>
 
+// NEAT specific headers ----------------------------
+#include "Node.h"
+#include "Network.h"
+
+// --------------------------------------------------
+
 int main() {
-  std::cout << "Hello World" << std::endl;
 
   return 0;
 }
