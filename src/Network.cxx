@@ -27,7 +27,12 @@ namespace NEAT {
     // Add this new node to the network
     m_nodes.push_back(newNodePtr);
 
-    return m_nodes.at(m_nodes.size());
+    return m_nodes.at(m_nodes.size()-1);
+  }
+
+  void Network::ConnectNodes(std::shared_ptr<Node> & node1, std::shared_ptr<Node> & node2){
+    node1->LinkToNode(node2); 
+    node2->LinkToNode(node1); 
   }
 
 } // namespace NEAT

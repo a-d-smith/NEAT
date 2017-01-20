@@ -26,6 +26,8 @@ class Network {
 
     // Functions to modify the network
     std::shared_ptr<Node> & AddNode();
+
+    void ConnectNodes(std::shared_ptr<Node> & node1, std::shared_ptr<Node> & node2);
 };
 
 } // namespace NEAT
