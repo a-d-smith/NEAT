@@ -4,16 +4,12 @@
 #include "Network.h"
 
 namespace NEAT {
-  /**
-   * @brief Default constructor
-   */
-  Network::Network() {
-    m_maxNodeId = 0;
-  } 
-
   // Getters
   const std::vector<std::shared_ptr<Node> > & Network::GetNodes() const {
     return m_nodes;
+  }
+  const std::vector<std::shared_ptr<Gene> > & Network::GetGenes() const {
+    return m_genes;
   }
 
   // Functions to modify the network
@@ -31,8 +27,13 @@ namespace NEAT {
   }
 
   void Network::ConnectNodes(std::shared_ptr<Node> & node1, std::shared_ptr<Node> & node2){
+    // Link the two nodes together
     node1->LinkToNode(node2); 
-    node2->LinkToNode(node1); 
+    node2->LinkToNode(node1);
+
+    // Now make a gene for the link
+    std::shared_ptr<Gene> newGenePtr ( new Gene(0, node1, node2) );
+    m_genes.push_back(newGenePtr);
   }
 
 } // namespace NEAT

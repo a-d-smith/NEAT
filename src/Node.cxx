@@ -1,6 +1,7 @@
 #ifndef NODE_CXX
 #define NODE_CXX
 
+#include <iostream>
 #include <algorithm>
 
 #include "Node.h"
@@ -19,8 +20,16 @@ const std::vector<std::shared_ptr<Node> > & Node::GetLinks() const {
 // Setters
 void Node::LinkToNode(std::shared_ptr<Node> & node) {
   // Check if a link doesn't already exist
-  if (std::find(m_links.begin(), m_links.end(), node) == m_links.end() && node->GetId() != m_id){
-    m_links.push_back(node);
+  if (std::find(m_links.begin(), m_links.end(), node) == m_links.end()){
+    if (node->GetId() != m_id){
+      m_links.push_back(node);
+    }
+    else{
+      std::cerr << "Error: Trying to connect a node to itself!" << std::endl;
+    }
+  }
+  else{
+    std::cerr << "Error: Trying to connect two nodes that are already connected!" << std::endl;
   }
 }
 
