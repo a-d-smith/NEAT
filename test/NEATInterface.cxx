@@ -13,14 +13,12 @@ typedef std::vector<NodePtr>  NodeVector;
 int main() {
   
   Network n;
-  n.AddNode();
-  n.AddNode();
-  n.AddNode();
+  NodePtr a = n.AddNode();
+  NodePtr b = n.AddNode();
+  NodePtr c = n.AddNode();
 
-  NodeVector nodes = n.GetNodes();
-
-  n.ConnectNodes(nodes[0], nodes[1]);
-  n.ConnectNodes(nodes[0], nodes[2]);
+  n.ConnectNodes(a, b);
+  n.ConnectNodes(b, c);
   
   for (NodePtr node : n.GetNodes()){
     std::cout << "Node " << node->GetId() << std::endl;
